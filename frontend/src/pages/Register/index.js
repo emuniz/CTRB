@@ -5,7 +5,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 import './styles.css';
 
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logo.png';
 export default function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -41,9 +41,9 @@ export default function Register() {
         <div className="register-container">
             <div className="content">
                 <section>
-                    <img src={logoImg} alt="Be The Hero" />
+                    <img src={logoImg} alt="CTRB" />
                     <h1>Cadastro</h1>
-                    <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem os casos da sua ONG</p>
+                    <p>Faça seu cadastro, entre na plataforma e atualize seus alunos sobre os treinos e avisos.</p>
 
                     <Link className="back-link" to="/">
                         <FiArrowLeft size={16} color="#E02041" />
@@ -53,7 +53,7 @@ export default function Register() {
 
                 <form onSubmit={handleRegister}>
                     <input 
-                    placeholder="Nome da Ong" 
+                    placeholder="Nome do Professor" 
                     value={name} 
                     onChange={e => setName(e.target.value)}
                     />

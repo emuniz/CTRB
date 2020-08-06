@@ -6,7 +6,7 @@ import { FiArrowLeft } from 'react-icons/fi'
 import api from '../../services/api';
 import './styles.css'
 
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logo.png';
 
 export default function NewIncident() {
     const [title, setTitle] = useState('');
@@ -43,8 +43,8 @@ export default function NewIncident() {
             <div className="content">
                 <section>
                     <img src={logoImg} alt="Be The Hero" />
-                    <h1>Cadastrar novo caso</h1>
-                    <p>Descreva o caso detalhadamente para encontrar um herói para resolver isso</p>
+                    <h1>Cadastrar nova informação</h1>
+                    <p>Descreva a informação de forma detalhada para os alunos.</p>
 
                     <Link className="back-link" to="/profile">
                         <FiArrowLeft size={16} color="#E02041" />
@@ -54,7 +54,7 @@ export default function NewIncident() {
 
                 <form onSubmit={handleNewIncident}>
                     <input 
-                    placeholder="Titulo do caso" 
+                    placeholder="Titulo do informação" 
                     value={title}
                     onChange={e =>setTitle(e.target.value)}
                     />
@@ -63,11 +63,7 @@ export default function NewIncident() {
                     value={description}
                     onChange={e =>setDescription(e.target.value)}
                     />
-                    <input 
-                    placeholder="Valor em reais" 
-                    value={value}
-                    onChange={e =>setValue(e.target.value)}
-                    />
+                   
 
                     <button className="button" type="submit">Cadastrar</button>
 

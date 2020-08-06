@@ -5,7 +5,7 @@ import { FiPower, FiTrash2 } from 'react-icons/fi'
 import api from '../../services/api';
 import './styles.css';
 
-import logoImg from '../../assets/logo.svg';
+import logoImg from '../../assets/logo.png';
 
 export default function Profile() {
     const [incidents, setIncidents] = useState([]);
@@ -50,27 +50,24 @@ export default function Profile() {
     return (
         <div className="profile-container">
             <header>
-                <img src={logoImg} alt="Be The Hero" />
-                <span>Bem vinda, {ongName}</span>
+                <img src={logoImg} alt="CTRB" />
+                <span>Bem vindo(a), {ongName}</span>
 
-                <Link className="button" to="/incidents/new">Cadastrar novo caso</Link>
+                <Link className="button" to="/incidents/new">Cadastrar novo aviso ou treino</Link>
                 <button onClick={handleLogout} type="button">
                     <FiPower size={18} color="#e02041"></FiPower>
                 </button>
             </header>
-            <h1>Casos cadastrados</h1>
+            <h1>Informações cadastradas</h1>
 
             <ul>
                 {incidents.map(incident => (
                 <li key={incident.id}>
-                    <strong>CASO:</strong>
+                    <strong>TÍTULO</strong>
                     <p>{incident.title}</p>
 
                     <strong>DESCRIÇÃO:</strong>
                     <p>{incident.description}</p>
-
-                    <strong>VALOR:</strong>
-                    <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency:'BRL'}).format(incident.value)}</p>
 
                     <button onClick={() =>handleDeleteIncident(incident.id)}  type="button">
                         <FiTrash2 size={20} color="#a9a9b3" />

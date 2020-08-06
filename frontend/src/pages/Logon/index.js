@@ -5,8 +5,8 @@ import {FiLogIn} from 'react-icons/fi';
 import api from '../../services/api';
 import './styles.css';
 
-import logoImg from '../../assets/logo.svg';
-import heroesImg from '../../assets/heroes.png';
+import logoImg from '../../assets/logo.png';
+import heroesImg from '../../assets/jiujitsu.jpg';
 
 export default function Logon() {
     const [id, setId] = useState(''); 
@@ -30,7 +30,7 @@ export default function Logon() {
     return (
         <div className="logon-container">
             <section className="form">
-                <img src={logoImg} alt="Be The Hero"/>
+                <img src={logoImg} alt="CTRB"/>
 
                 <form  onSubmit={handleLogin}>
                     <h1> Faça seu logon</h1>
